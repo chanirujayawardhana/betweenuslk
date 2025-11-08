@@ -17,6 +17,8 @@
       --ink: #e8e8ea;
       --muted: #9aa0a6;
       --accent: #d1b280;
+      --x: 50%;
+      --y: 50%;
     }
 
     * {
@@ -32,10 +34,13 @@
     body {
       display: grid;
       place-items: center;
-      background: radial-gradient(1200px 800px at 20% 10%, #1a1b1f, #0b0c0d);
+      height: 100vh;
+      background: radial-gradient(circle at var(--x) var(--y), #1a1b1f, #0b0c0d);
       color: var(--ink);
       font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
       line-height: 1.6;
+      transition: background 0.2s ease;
+      overflow: hidden;
     }
 
     .card {
@@ -78,9 +83,7 @@
     }
 
     @keyframes pulse {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: scale(1)
       }
 
@@ -96,7 +99,6 @@
     .help-row {
       display: flex;
       align-items: center;
-      /* vertically center icons */
       gap: 14px;
     }
 
@@ -143,7 +145,6 @@
       font-size: 14px;
       margin-top: 12px;
     }
-
 
     @media (max-width:640px) {
       .help-left {
@@ -199,6 +200,19 @@
     </div>
 
   </main>
-</body>
 
+  <script>
+    // Smooth background gradient movement
+    let x = 50, y = 50;
+    document.addEventListener("mousemove", (e) => {
+      const targetX = (e.clientX / window.innerWidth) * 100;
+      const targetY = (e.clientY / window.innerHeight) * 100;
+      x += (targetX - x) * 0.1;
+      y += (targetY - y) * 0.1;
+      document.body.style.setProperty("--x", `${x}%`);
+      document.body.style.setProperty("--y", `${y}%`);
+    });
+  </script>
+
+</body>
 </html>
