@@ -12,13 +12,15 @@
     rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0c0d;
+      --x: 50%;
+      --y: 50%;
+      --bg1: #2C5364;
+      --bg2: #203A43;
+      --bg3: #0F2027;
       --card: #141518;
       --ink: #e8e8ea;
       --muted: #9aa0a6;
       --accent: #d1b280;
-      --x: 50%;
-      --y: 50%;
     }
 
     * {
@@ -35,11 +37,17 @@
       display: grid;
       place-items: center;
       height: 100vh;
-      background: radial-gradient(circle at var(--x) var(--y), #1a1b1f, #0b0c0d);
+      background: linear-gradient(to right, var(--bg1), var(--bg2), var(--bg3));
+      background: radial-gradient(
+        circle at var(--x) var(--y),
+        var(--bg1),
+        var(--bg2),
+        var(--bg3)
+      );
       color: var(--ink);
       font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
       line-height: 1.6;
-      transition: background 0.2s ease;
+      transition: background 0.25s ease-out;
       overflow: hidden;
     }
 
