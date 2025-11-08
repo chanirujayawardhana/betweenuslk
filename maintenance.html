@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>between us — Site Under Maintenance</title>
+  <meta name="description" content="Between Us LK is undergoing scheduled maintenance. We'll be back shortly." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0c0d;--card:#141518;--ink:#e8e8ea;--muted:#9aa0a6;--accent:#d1b280}
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{display:grid;place-items:center;background:radial-gradient(1200px 800px at 20% 10%, #1a1b1f, #0b0c0d);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    .card{background:linear-gradient(180deg,#16171b, #101114);border:1px solid #23242a;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.4);padding:32px;max-width:640px;margin:24px}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(28px,4vw,40px);margin:0 0 8px;color:#fff;letter-spacing:.3px}
+    p{margin:0 0 14px;color:var(--muted)}
+    .row{display:flex;gap:16px;align-items:center;margin-bottom:10px}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px rgba(209,178,128,.6);animation:pulse 1.8s infinite ease-in-out}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1rem;border-radius:999px;border:1px solid #2a2b30;background:#1a1b20;color:#fff;text-decoration:none}
+    .btn:hover{transform:translateY(-1px)}
+    .inline{display:inline-block}
+    .footer{margin-top:18px;font-size:13px;color:#7d838b}
+    .brand{font-weight:600;letter-spacing:.4px}
+    .contacts a{color:#fff;text-decoration:none;border-bottom:1px dotted rgba(255,255,255,.25)}
+    .contacts{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .logo{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+    .logo-badge{width:28px;height:28px;border-radius:6px;background:#fff;color:#000;display:grid;place-items:center;font-weight:800}
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-label="Site Under Maintenance">
+    <div class="logo"><div class="logo-badge">BU</div> <span class="brand">between us</span></div>
+    <div class="row"><div class="dot" aria-hidden="true"></div><h1>We’ll be right back</h1></div>
+    <p>Our site is undergoing scheduled maintenance. Thanks for your patience while we tidy things up.</p>
+    <p><strong>Expected back:</strong> Soon.</p>
+    <div class="contacts">
+      <span>Need a hand?</span>
+      <a href="mailto:hello@betweenuslk.com">info.betweenusmedia@gmail.com</a>
+      <a href="tel:+94770000000">+94 76 107 1584</a>
+      <a class="inline" href="https://www.instagram.com/chanxr_____.u?igsh=MWx6bjQycHRtY213Mw%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="footer">© <span id="year"></span> between us</div>
+  </main>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
