@@ -1,13 +1,11 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/maintenance.html" }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
-      "source": "/maintenance.html",
+      "source": "/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store" },
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        { "key": "Cache-Control", "value": "public, max-age=600" }
       ]
     }
   ]
